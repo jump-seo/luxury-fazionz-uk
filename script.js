@@ -1,5 +1,16 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Set fixed viewport height
+    const setFixedVh = () => {
+        // Get the actual viewport height
+        let vh = window.innerHeight * 0.01;
+        // Set the value as a CSS custom property
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    
+    // Set the height initially
+    setFixedVh();
+    
     // Add fixed header class on scroll
     const header = document.querySelector('header');
     const heroSection = document.querySelector('.hero');
